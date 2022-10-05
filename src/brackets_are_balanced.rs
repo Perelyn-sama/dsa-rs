@@ -7,15 +7,12 @@ pub fn run(string: &str) -> bool {
         match letter {
             '[' => {
                 stack.push(letter);
-                switch_one = true;
             },
             '{' => {
                 stack.push(letter);
-                switch_two = true;
             },
             '(' => {
                 stack.push(letter);
-                switch_three = true;
             },
             ']' => {
                 if stack.len() != 0 && stack.get(stack.len() - 1).unwrap() == &'['{
