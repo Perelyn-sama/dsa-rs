@@ -5,7 +5,8 @@
 // mod prime_factors;
 // mod differences_of_squares;
 // mod leap_year;
-mod brackets_are_balanced;
+// mod brackets_are_balanced;
+mod build_proverb;
 
 fn main() {
     // println!("{:?}", unique_email::run(vec!["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]));
@@ -19,10 +20,11 @@ fn main() {
     // println!("{:?}", brackets_are_balanced::run("}{"));
     // println!("{:?}", brackets_are_balanced::run("[({]})"));
 
-    println!("{:?}", brackets_are_balanced::run(")()"));
-    println!("{:?}", brackets_are_balanced::run("[]]"));
-    println!("{:?}", brackets_are_balanced::run("{[)][]}"));
+    // println!("{:?}", brackets_are_balanced::run(")()"));
+    // println!("{:?}", brackets_are_balanced::run("[]]"));
+    // println!("{:?}", brackets_are_balanced::run("{[)][]}"));
 
+    println!("{:?}", build_proverb::run(&["nail"]));
 
 }
 
