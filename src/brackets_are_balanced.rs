@@ -1,3 +1,5 @@
+// rank - easy
+// source - exercism
 pub fn run(string: &str) -> bool {
     let mut stack:Vec<char> = Vec::new();
     let mut trash:Vec<char> = Vec::new();
