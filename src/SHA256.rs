@@ -1,4 +1,4 @@
-pub fn pad(str: &str, bits: u32) -> String {
+pub fn pad(str: String, bits: u32) -> String {
     let mut res = str.chars().rev().collect::<String>();
 
     while res.len() as u32 % bits != 0 {
