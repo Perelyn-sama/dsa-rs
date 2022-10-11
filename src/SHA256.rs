@@ -45,3 +45,34 @@ pub fn preProcess(message: &str) -> String {
     m + &ml
 }
 
+#[test]
+fn test_pad() {
+    let input_1 = "10011".to_string();
+    let input_2 = 8;
+    let expected = "00010011".to_string();
+    assert_eq!(pad(input_1, input_2), expected);
+
+}
+
+#[test]
+fn test_chunkify() {
+    let input_1 = "this is a test";
+    let input_2 = 2;
+    let expected = vec!["th", "is", " i", "s ", "a ", "te", "st"];
+    assert_eq!(chunkify(input_1, input_2), expected);
+}
+
+#[test]
+fn test_rotateRight() {
+    let input_1 = "1011";
+    let input_2 = 3;
+    let expected = "0111".to_string();
+    assert_eq!(rotateRight(input_1, input_2), expected);
+}
+
+#[test]
+fn test_preProcess() {
+    let input_1 = "Perelyn";
+    let expected = "01010000011001010111001001100101011011000111100101101110100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111000".to_string();
+    assert_eq!(preProcess(input_1), expected);
+}
