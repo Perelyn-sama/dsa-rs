@@ -27,8 +27,9 @@ fn main() {
 
     // println!("{:?}", build_proverb::run(&["nail"]));
 
-    println!("{}", SHA256::pad("10011", 8));
+    println!("{}", SHA256::pad("10011".to_string(), 8));
     println!("{:?}", SHA256::chunkify("this is a test", 2));
     println!("{:?}", SHA256::rotateRight("1011", 3));
+    println!("{:?}", SHA256::preProcess("Perelyn"));
 
 }
