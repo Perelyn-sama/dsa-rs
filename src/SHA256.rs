@@ -7,7 +7,7 @@ pub fn pad(str: String, bits: u32) -> String {
     res.chars().rev().collect::<String>()
 }
 
-pub fn chunkify(str: &str, size: usize) -> Vec<String> {
+pub fn chunkify(str: String, size: usize) -> Vec<String> {
     let mut chunks: Vec<String> = Vec::new();
     let mut i = 0;
 
@@ -45,6 +45,50 @@ pub fn preProcess(message: &str) -> String {
     m + &ml
 }
 
+pub fn sha256(message: &str ) ->  String {
+
+    let H0 = "0x6a09e667";
+    let H1 = "0xbb67ae85";
+    let H2 = "0x3c6ef372";
+    let H3 = "0xa54ff53a";
+    let H4 = "0x510e527f";
+    let H5 = "0x9b05688c";
+    let H6 = "0x1f83d9ab";
+    let H7 = "0x5be0cd19";
+
+    let bits = preProcess(message);
+    // println!("{}", bits);
+    let chunks = chunkify(bits, 512);
+    // println!("{:?}", chunks);
+
+    chunks.iter().enumerate().for_each(|(index, val)| {
+        let mut words = chunkify(val.to_string(), 32);
+
+        println!("{:?}", &words);
+
+        // for i in 15..64 {
+        //     let W1 = &words[i - 15];
+        //     let W2 = &words[i - 2];
+        //     let R1 = rotateRight(&W1, 7);
+        //     let R2 = rotateRight(&W1, 18);
+        //     let R3 = rotateRight(&W2, 17);
+        //     let R4 = rotateRight(&W2, 19);
+        //
+        //     // words.push("0".to_string());
+        //     // println!("{}", R1);
+        //     // 2.pow(2);
+        //     // 2 ^ 2
+        //     // Wizord's comments
+        //     // use better types
+        //     // {:b} 0
+        //     // use u32
+        //
+        // }
+    });
+
+    "I'm sorry".to_string()
+}
+
 #[test]
 fn test_pad() {
     let input_1 = "10011".to_string();
@@ -56,7 +100,7 @@ fn test_pad() {
 
 #[test]
 fn test_chunkify() {
-    let input_1 = "this is a test";
+    let input_1 = "this is a test".to_string();
     let input_2 = 2;
     let expected = vec!["th", "is", " i", "s ", "a ", "te", "st"];
     assert_eq!(chunkify(input_1, input_2), expected);
