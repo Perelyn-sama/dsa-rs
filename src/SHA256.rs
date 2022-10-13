@@ -1,3 +1,5 @@
+use std::u128;
+
 pub fn pad(str: String, bits: u32) -> String {
     let mut res = str.chars().rev().collect::<String>();
 
@@ -64,26 +66,25 @@ pub fn sha256(message: &str ) ->  String {
     chunks.iter().enumerate().for_each(|(index, val)| {
         let mut words = chunkify(val.to_string(), 32);
 
-        println!("{:?}", &words);
+        for i in 16..64 {
+            println!("{}", i);
+            let W1 = &words[i - 15];
+            let W2 = &words[i - 2];
+            let R1 = rotateRight(&W1, 7);
+            let R2 = rotateRight(&W1, 18);
+            let R3 = rotateRight(&W2, 17);
+            let R4 = rotateRight(&W2, 19);
+            // println!("{}", R1);
+            let S0 = u32::from_str_radix(&R1, 2).unwrap() ^ u32::from_str_radix(&R2, 2).unwrap() ^ (u32::from_str_radix(&W1, 2).unwrap() >> 3);
 
-        // for i in 15..64 {
-        //     let W1 = &words[i - 15];
-        //     let W2 = &words[i - 2];
-        //     let R1 = rotateRight(&W1, 7);
-        //     let R2 = rotateRight(&W1, 18);
-        //     let R3 = rotateRight(&W2, 17);
-        //     let R4 = rotateRight(&W2, 19);
-        //
-        //     // words.push("0".to_string());
-        //     // println!("{}", R1);
-        //     // 2.pow(2);
-        //     // 2 ^ 2
-        //     // Wizord's comments
-        //     // use better types
-        //     // {:b} 0
-        //     // use u32
-        //
-        // }
+            let S1 = u32::from_str_radix(&R3, 2).unwrap() ^ u32::from_str_radix(&R4, 2).unwrap() ^ (u32::from_str_radix(&W2, 2).unwrap() >> 10);
+
+            let val : u128 = u128::from_str_radix(&words[i - 16], 2).unwrap() + S0 as u128 + u128::from_str_radix(&words[i - 7], 2).unwrap() + S1 as u128;
+
+            // words[i] = pad(format!("{:b}", val >> 0), 32);
+
+            words.push(pad(format!("{:b}", val >> 0), 32));
+        }
     });
 
     "I'm sorry".to_string()
