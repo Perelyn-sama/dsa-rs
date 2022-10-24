@@ -1,3 +1,5 @@
+// source exercism
+// rank easy
 use std::collections::HashSet;
 pub fn raindrops(n: u32) -> String {
     if n % 3 != 0 && n % 5 != 0 && n % 7 != 0 {
