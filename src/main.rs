@@ -8,7 +8,8 @@
 // mod brackets_are_balanced;
 // mod build_proverb;
 //mod SHA256;
-mod raindrops;
+//mod raindrops;
+mod sum_of_multiples;
 
 fn main() {
     // println!("{:?}", unique_email::run(vec!["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]));
