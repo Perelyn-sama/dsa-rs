@@ -7,7 +7,8 @@
 // mod leap_year;
 // mod brackets_are_balanced;
 // mod build_proverb;
-mod SHA256;
+//mod SHA256;
+mod raindrops;
 
 fn main() {
     // println!("{:?}", unique_email::run(vec!["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]));
@@ -31,6 +32,5 @@ fn main() {
     // println!("{:?}", SHA256::chunkify("this is a test".to_string(), 2));
     // println!("{:?}", SHA256::rotateRight("1011", 3));
     // println!("{:?}", SHA256::preProcess("Perelyn"));
-    println!("{:?}", SHA256::sha256("Perelyn"));
-
+    //    println!("{:?}", SHA256::sha256("Perelyn"));
 }
