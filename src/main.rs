@@ -11,7 +11,8 @@
 //mod raindrops;
 //mod sum_of_multiples;
 //mod series; not done yet
-mod grains;
+//mod grains; not done yet
+mod clock;
 fn main() {
     // println!("{:?}", unique_email::run(vec!["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]));
 
