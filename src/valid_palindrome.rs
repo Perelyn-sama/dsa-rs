@@ -1,3 +1,5 @@
+// rank - easy
+// source - leetcode
 pub fn is_palindrome(s: String) -> bool {
     let mut clean_string: String = String::new();
     for i in s.chars() {
