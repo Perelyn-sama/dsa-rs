@@ -14,3 +14,4 @@ mod series; // not done yet
 mod grains; // not done yet
 mod clock;
 mod sublist;
+mod remove_element;
