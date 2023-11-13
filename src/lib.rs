@@ -10,8 +10,9 @@ mod build_proverb;
 mod SHA256;
 mod raindrops;
 mod sum_of_multiples;
-mod series; // not done yet
+// mod series; // not done yet
 mod grains; // not done yet
 mod clock;
-mod sublist;
+// mod sublist;
 mod remove_element;
+mod str_str;
